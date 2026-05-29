@@ -1,6 +1,0 @@
-pettingzoo
-gymnasium
-numpy
-
-[dev]
-pytest
