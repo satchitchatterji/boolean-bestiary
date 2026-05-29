@@ -26,6 +26,22 @@ For docs:
 pip install -e '.[docs]'
 ```
 
+## Conda Environment
+
+Create from the checked-in environment file:
+
+```bash
+conda env create -f environment.yml
+conda activate boolean-bestiary
+```
+
+If the environment already exists:
+
+```bash
+conda env update -f environment.yml --prune
+conda activate boolean-bestiary
+```
+
 ## Quickstart
 
 ```python
