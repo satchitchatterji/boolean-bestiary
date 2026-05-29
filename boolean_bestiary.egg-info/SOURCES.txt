@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+boolean_bestiary/__init__.py
+boolean_bestiary.egg-info/PKG-INFO
+boolean_bestiary.egg-info/SOURCES.txt
+boolean_bestiary.egg-info/dependency_links.txt
+boolean_bestiary.egg-info/requires.txt
+boolean_bestiary.egg-info/top_level.txt
+boolean_bestiary/envs/__init__.py
+boolean_bestiary/envs/boolean_game.py
+tests/test_boolean_game.py

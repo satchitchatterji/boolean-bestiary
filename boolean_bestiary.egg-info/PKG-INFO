@@ -1,0 +1,76 @@
+Metadata-Version: 2.4
+Name: boolean-bestiary
+Version: 0.1.0
+Summary: PettingZoo ParallelEnv for n-player Boolean games
+Author: boolean-bestiary contributors
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pettingzoo
+Requires-Dist: gymnasium
+Requires-Dist: numpy
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+
+# boolean-bestiary
+
+`boolean-bestiary` provides a reusable PettingZoo Parallel environment for **n-player Boolean games**.
+
+In a Boolean game, each agent controls one or more Boolean variables and has a private Boolean goal formula. All agents act simultaneously by setting their controlled variables, then each receives reward based on whether its goal is satisfied (minus optional action costs).
+
+## Why Parallel API?
+
+Boolean games are naturally simultaneous-action games. PettingZoo's Parallel API is designed for this setting, where all live agents provide actions at the same environment step.
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+For development/tests:
+
+```bash
+pip install -e .[dev]
+```
+
+## Minimal usage
+
+```python
+from boolean_bestiary import BooleanGameEnv
+
+env = BooleanGameEnv(num_agents=3, max_cycles=1)
+obs, infos = env.reset(seed=42)
+
+actions = {agent: env.action_space(agent).sample() for agent in env.agents}
+obs, rewards, terminations, truncations, infos = env.step(actions)
+
+print(rewards)
+print(env.state())
+```
+
+## Formula syntax
+
+Goals accept safe Boolean formulas (no `eval`):
+
+- Variables: `x0`, `foo`, `bar_1`
+- Operators: `and`, `or`, `not`
+- Parentheses: `(x0 and not x1) or x2`
+- Constants: `True`, `False`
+- Symbolic aliases: `&`, `|`, `~`, `!`
+
+Unsupported syntax is rejected with clear errors.
+
+## Running tests
+
+```bash
+pytest
+```
+
+The suite includes behavior tests and PettingZoo's `parallel_api_test`.
+
+## Example script
+
+```bash
+python examples/random_policy.py
+```

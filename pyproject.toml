@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boolean-bestiary"
+version = "0.1.0"
+description = "PettingZoo ParallelEnv for n-player Boolean games"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "boolean-bestiary contributors" }]
+license = { text = "MIT" }
+dependencies = [
+  "pettingzoo",
+  "gymnasium",
+  "numpy",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["boolean_bestiary*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
