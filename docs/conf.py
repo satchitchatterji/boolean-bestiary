@@ -25,7 +25,8 @@ autodoc_member_order = "bysource"
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
-html_theme = "alabaster"
+html_theme = "classic"
+html_logo = "_static/bb-logo.jpg"
 html_static_path = ["_static"]
 
 os.environ.setdefault("PYTHONHASHSEED", "0")

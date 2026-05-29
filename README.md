@@ -1,5 +1,7 @@
 # boolean-bestiary
 
+![boolean-bestiary logo](examples/assets/bb-logo.jpg)
+
 `boolean-bestiary` provides a reusable PettingZoo Parallel environment for **n-player Boolean games**.
 
 In a Boolean game, each agent controls one or more Boolean variables and has a private Boolean goal formula. All agents act simultaneously by setting their controlled variables, then each receives reward based on whether its goal is satisfied (minus optional action costs).
