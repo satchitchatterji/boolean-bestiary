@@ -1,6 +1,6 @@
 # boolean-bestiary
 
-![boolean-bestiary logo](examples/assets/bb-logo.jpg)
+<img src="examples/assets/bb-logo.jpg" alt="boolean-bestiary logo" width="120" />
 
 `boolean-bestiary` provides a reusable PettingZoo Parallel environment for **n-player Boolean games**.
 
@@ -91,3 +91,9 @@ Training artifacts are written to `examples/assets/`:
 - `iql_training_returns.csv`
 - `iql_training_curve.png`
 - `iql_training_flow.mmd`
+
+## References
+
+- Harrenstein, P., van der Hoek, W., Meyer, J.-J. C., and Witteveen, C. (2001). *Boolean Games*. TARK 2001. [PDF](https://www.tark.org/proceedings/tark_jul8_01/p287-harrenstein.pdf)
+- Harrenstein, P., van der Hoek, W., Meyer, J.-J. C., and Witteveen, C. (2002). *On Modal Logic Interpretations of Games*. ECAI 2002. [Record](https://research-portal.uu.nl/en/publications/on-modal-logic-interpretations-of-games)
+- Gutierrez, J., Harrenstein, P., and Wooldridge, M. (2015). *Iterated Boolean Games*. *Artificial Intelligence*. [Article](https://www.sciencedirect.com/science/article/pii/S0890540115000267)
