@@ -117,3 +117,22 @@ The suite includes behavior tests and PettingZoo's `parallel_api_test`.
 ```bash
 python examples/random_policy.py
 ```
+
+## Tabular IQL baseline
+
+A minimal Independent Q-Learning baseline is included in:
+
+- `examples/algorithms/iql.py`: reusable tabular IQL components
+- `examples/train_iql.py`: runnable training script on `BooleanGameEnv`
+- `examples/assets/iql_training_flow.mmd`: training loop diagram (Mermaid)
+
+Run it with:
+
+```bash
+python examples/train_iql.py
+```
+
+Training artifacts are written to `examples/assets/`:
+
+- `iql_training_returns.csv`: episode return + 100-episode moving average
+- `iql_training_curve.png`: plotted training curve (if `matplotlib` is installed)

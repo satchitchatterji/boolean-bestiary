@@ -1,0 +1,17 @@
+flowchart TD
+    A[Initialize BooleanGameEnv] --> B[Create one TabularIQLAgent per PettingZoo agent]
+    B --> C[Reset env and get initial observations]
+    C --> D[Encode global assignment to tabular state index]
+    D --> E[Each agent picks epsilon-greedy action index]
+    E --> F[Decode action index to MultiBinary action vector]
+    F --> G[Parallel step joint actions in env]
+    G --> H[Receive next observations and per-agent rewards]
+    H --> I[Encode next state index]
+    I --> J[Per-agent Q update]
+    J --> K{Episode done?}
+    K -- No --> D
+    K -- Yes --> L[Start next episode]
+    L --> C
+
+    M[After training: greedy rollout] --> N[Select argmax Q action per agent]
+    N --> O[Step env and print rewards/final assignment]
