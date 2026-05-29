@@ -20,6 +20,9 @@ dependencies = [
 dev = [
   "pytest",
 ]
+docs = [
+  "sphinx>=7.0",
+]
 
 [tool.setuptools.packages.find]
 where = ["."]
